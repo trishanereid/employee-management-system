@@ -15,4 +15,6 @@ public interface EmployeeBo {
     void updateEmployee(Employee employee);
 
     Employee findById(Long id);
+
+    Employee findByFirstName(String firstName);
 }

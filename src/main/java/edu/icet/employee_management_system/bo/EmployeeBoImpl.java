@@ -49,6 +49,13 @@ public class EmployeeBoImpl implements EmployeeBo{
             Optional<Employee> byId = employeeRepository.findById(id);
             return mapper.convertValue(byId, Employee.class);
         }
-        return null;
+        return new Employee();
+    }
+
+    @Override
+    public Employee findByFirstName(String firstName) {
+        return mapper.convertValue(
+                employeeRepository.findByFirstname(firstName), Employee.class
+        );
     }
 }
