@@ -11,4 +11,6 @@ public interface EmployeeBo {
     List<Employee> getAll();
 
     void deleteEmployeeById(Long id);
+
+    void updateEmployee(Employee employee);
 }

@@ -32,4 +32,13 @@ public class EmployeeBoImpl implements EmployeeBo{
             employeeRepository.deleteById(id);
         }
     }
+
+    @Override
+    public void updateEmployee(Employee employee) {
+        if (employeeRepository.findById(employee.getId()).isPresent()){
+            employeeRepository.save(
+                    mapper.convertValue(employee, EmployeeEntity.class)
+            );
+        }
+    }
 }

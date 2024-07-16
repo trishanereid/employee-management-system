@@ -32,4 +32,8 @@ public class EmployeeController {
         return "Deleted";
     }
 
+    @PostMapping("/update-employee")
+    public void updateEmployee(@RequestBody Employee employee){
+        employeeBo.updateEmployee(employee);
+    }
 }
