@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -40,5 +41,14 @@ public class EmployeeBoImpl implements EmployeeBo{
                     mapper.convertValue(employee, EmployeeEntity.class)
             );
         }
+    }
+
+    @Override
+    public Employee findById(Long id) {
+        if (employeeRepository.findById(id).isPresent()){
+            Optional<Employee> byId = employeeRepository.findById(id);
+            return mapper.convertValue(byId, Employee.class);
+        }
+        return null;
     }
 }
