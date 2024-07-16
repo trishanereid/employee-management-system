@@ -25,4 +25,11 @@ public class EmployeeBoImpl implements EmployeeBo{
     public List<Employee> getAll() {
         return employeeRepository.findAll();
     }
+
+    @Override
+    public void deleteEmployeeById(Long id) {
+        if (employeeRepository.existsById(id)){
+            employeeRepository.deleteById(id);
+        }
+    }
 }

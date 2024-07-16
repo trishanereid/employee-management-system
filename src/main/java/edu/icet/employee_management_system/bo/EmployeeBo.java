@@ -9,4 +9,6 @@ public interface EmployeeBo {
     void addEmployee(Employee employee);
 
     List<Employee> getAll();
+
+    void deleteEmployeeById(Long id);
 }
